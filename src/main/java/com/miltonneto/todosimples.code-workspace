@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "projeto css3 intermediario",
+		"java.project.sourcePaths": [
+			"java"
+		],
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "interactive"
+	},
+	"extensions": {
+		"recommendations": [
+			"esbenp.prettier-vscode"
+		]
+	}
+}
