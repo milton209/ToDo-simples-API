@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.miltonneto.todosimples.models.User;
-import com.miltonneto.todosimples.repositories.TaskRepository;
 import com.miltonneto.todosimples.repositories.UserRepository;
 
 @Service
@@ -14,10 +13,6 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private TaskRepository TaskRepository;
-
 
     public User findById(Long id){  //optional , caso o usuario esteja vazio.
         Optional<User> user = this.userRepository.findById(id);
@@ -30,7 +25,6 @@ public class UserService {
     public User create (User obj ){ 
         obj.setId(null);
         obj = this.userRepository.save(obj);
-        this.TaskRepository.saveAll(obj.getTasks());
         return obj;
     }
 

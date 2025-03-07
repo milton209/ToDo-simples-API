@@ -25,7 +25,6 @@ public class Task {
 
     private Long id;
     
-    
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -50,7 +49,7 @@ public class Task {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
