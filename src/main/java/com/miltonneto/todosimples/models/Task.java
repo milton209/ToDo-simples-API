@@ -22,7 +22,6 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id" , unique = true)
-
     private Long id;
     
     @ManyToOne
@@ -39,10 +38,10 @@ public class Task {
     public Task() {
     }
 
-    public Task(long id, User user, String desciption) {
+    public Task(long id, User user, String description) {
         this.id = id;
         this.user = user;
-        this.description = desciption;
+        this.description = description;
     }
 
     public long getId() {
@@ -61,17 +60,17 @@ public class Task {
         this.user = user;
     }
 
-    public String getDesciption() {
+    public String getDescription() {
         return this.description;
     }
 
-    public void setDesciption(String desciption) {
-        this.description = desciption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Task id(long id) {
         setId(id);
-        return this;
+        return this; 
     }
 
     public Task user(User user) {
@@ -79,8 +78,8 @@ public class Task {
         return this;
     }
 
-    public Task desciption(String desciption) {
-        setDesciption(desciption);
+    public Task description(String description) {
+        setDescription(description);
         return this;
     }
 

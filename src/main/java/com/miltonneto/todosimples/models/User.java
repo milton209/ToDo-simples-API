@@ -13,6 +13,8 @@ import jakarta.persistence.GenerationType;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
@@ -37,7 +39,7 @@ public class User {
     @Size(groups = CreateUser.class , min = 2, max = 100)
     private String username;
 
-    //garante que a senha seja apenas de escrita , json nao retorna a senha , apenas o metodo de escrita
+    
     @JsonProperty(access = Access.WRITE_ONLY)
     @Column (name = "password" , length = 60, nullable = false)
     @NotNull (groups = {CreateUser.class, UpdateUser.class})
@@ -83,7 +85,7 @@ public class User {
     }
 
 
-
+    @JsonIgnore
     public List<Task> getTasks() {
         return this.tasks;
     }

@@ -35,6 +35,7 @@ public class UserService {
         return this.userRepository.save(newObj);
     }
 
+    @Transactional
     public void delete(Long id){
         findById(id);
         try {
