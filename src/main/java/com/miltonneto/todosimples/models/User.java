@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
-
 @Entity
 @Table (name =User.TABLE_NAME)
 public class User {
@@ -39,7 +38,6 @@ public class User {
     @Size(groups = CreateUser.class , min = 2, max = 100)
     private String username;
 
-    
     @JsonProperty(access = Access.WRITE_ONLY)
     @Column (name = "password" , length = 60, nullable = false)
     @NotNull (groups = {CreateUser.class, UpdateUser.class})
@@ -58,7 +56,6 @@ public class User {
         this.username = username;
         this.password = password;
     }
-
 
     public Long getId() {
         return this.id;
@@ -84,7 +81,6 @@ public class User {
         this.password = password;
     }
 
-
     @JsonIgnore
     public List<Task> getTasks() {
         return this.tasks;
@@ -93,8 +89,6 @@ public class User {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
-
-
 
 @Override
 public boolean equals(Object obj) {
@@ -115,7 +109,6 @@ public boolean equals(Object obj) {
         else if (! this.id.equals(other.id))
         return false;
     return Objects.equals(this.id , other.id) && Objects.equals(this.username , other.username) && Objects.equals (this.password, other.password);
-
 }
 
     @Override 
@@ -125,5 +118,4 @@ public boolean equals(Object obj) {
         result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
         return result; 
     }
-
 }
