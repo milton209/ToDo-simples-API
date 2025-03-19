@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.miltonneto.todosimples.models.Task;
 import com.miltonneto.todosimples.services.TaskService;
+import com.miltonneto.todosimples.services.UserService;
 
 import jakarta.validation.Valid;
 
@@ -28,6 +29,9 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping("/{id}")
     public ResponseEntity<Task> findById (@PathVariable Long id) {
         Task obj = this.taskService.findById(id);
@@ -36,6 +40,7 @@ public class TaskController {
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Task>> findAllByUserId(@PathVariable Long userId){
+        userService.findById(userId);
         List<Task> objs = this.taskService.findAllByUserId(userId);
         return ResponseEntity.ok().body(objs);
     }

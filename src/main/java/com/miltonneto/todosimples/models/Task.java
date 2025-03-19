@@ -32,8 +32,7 @@ public class Task {
     @NotNull
     @NotEmpty
     @Size(min = 1 , max = 255)
-    private String description ;
-
+    private String description;
 
     public Task() {
     }
@@ -102,7 +101,6 @@ public class Task {
             else if (! this.id.equals(other.id))
             return false;
         return Objects.equals(this.id , other.id) && Objects.equals(this.user , other.user) && Objects.equals (this.description, other.description);
-    
     }
     
         @Override 
