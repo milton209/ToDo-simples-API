@@ -50,4 +50,7 @@ import com.miltonneto.todosimples.repositories.UserRepository;
             throw new RuntimeException("Nao e possivel excluir pois ha entidades relacionadas !!! ");
         }
     }
+
+
 }
+

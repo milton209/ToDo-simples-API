@@ -43,7 +43,7 @@ public class UserController {
         path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
-
+    
     @PutMapping("/{id}")
     @Validated(UpdateUser.class)
     public ResponseEntity<Void> update (@Valid @RequestBody User obj, @PathVariable Long id) {
