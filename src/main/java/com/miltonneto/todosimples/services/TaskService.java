@@ -56,8 +56,6 @@ public class TaskService {
         } catch (Exception e) {
             throw new RuntimeException("Nao e possivel deletar pois ha entidades relacionadas!!!");
         }
-
-
     }
 
 }
